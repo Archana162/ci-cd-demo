@@ -20,8 +20,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.archana162 }}
-          password: ${{ secrets.dckr_pat_yn7KMPMu-nWVg6BsOZA_Xgx5aRU }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -29,6 +29,3 @@ jobs:
           context: .
           push: true
           tags: archana162/ci-cd-demo:latest
-
-
-    
